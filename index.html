@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
+
     <style>
         .weak {
             opacity: 0.5;
@@ -48,12 +48,15 @@
             zip: '',
             city: 'Insert zip to display matching city'
         },
-        methods:{
-            parseZip: function(){
-                axios.get('http://api.zippopotam.us/de/42697')
-                .then(function(response){
-                    console.log(response.data);
-                })
+        methods: {
+            parseZip: function () {
+                if (this.zip.length === 5) {
+                    axios.get(`http://api.zippopotam.us/de/${this.zip}`)
+                        .then(function (response) {
+                            console.log(response.data.places[0]['place name']);
+                        })
+                }
+
             }
         }
     });
