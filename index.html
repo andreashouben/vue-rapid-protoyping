@@ -3,6 +3,7 @@
 <head>
     <title>Vue for rapid prototyping</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <style>
         .weak {
@@ -23,18 +24,32 @@
 </head>
 
 <body>
-    <div class="row">
-        <form>
-            <label for="zip">Zip:</label>
-            <input type="text" id="zip" placeholder="Insert ZIP">
-            <span class="weak hidden">Loading...</span>
-        </form>
+    <div id="zip-loader">
+        <div class="row">
+            <form>
+                <label for="zip">Zip:</label>
+                <input type="text" id="zip" placeholder="Insert ZIP">
+                <span class="weak hidden">Loading...</span>
+            </form>
+        </div>
+        <div class="row">
+            <label for="city">City</label>
+            <span>Matching City:</span> <span class="match">{{ city }}</span>
+        </div>
     </div>
-    <div class="row">
-        <label for="city">City</label>
-        <span>Matching City:</span> <span class="match">Insert zip to display matching city</span>
-    </div>
-
 </body>
+
+
+<script type="text/javascript">
+    new Vue({
+        el: '#zip-loader',
+        data: {
+            city: 'Insert zip to display matching city'
+        }
+    });
+
+</script>
+
+
 
 </html>
