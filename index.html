@@ -50,10 +50,11 @@
         },
         methods: {
             parseZip: function () {
+                let myApp = this;
                 if (this.zip.length === 5) {
                     axios.get(`http://api.zippopotam.us/de/${this.zip}`)
                         .then(function (response) {
-                            console.log(response.data.places[0]['place name']);
+                            myApp.city = response.data.places[0]['place name'];
                         })
                 }
 
