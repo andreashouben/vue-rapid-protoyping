@@ -4,7 +4,8 @@
     <title>Vue for rapid prototyping</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
     <style>
         .weak {
             opacity: 0.5;
@@ -49,7 +50,10 @@
         },
         methods:{
             parseZip: function(){
-                console.log(this.zip);
+                axios.get('http://api.zippopotam.us/de/42697')
+                .then(function(response){
+                    console.log(response.data);
+                })
             }
         }
     });
