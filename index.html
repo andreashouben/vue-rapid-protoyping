@@ -56,6 +56,9 @@
                         .then(function (response) {
                             myApp.city = response.data.places[0]['place name'];
                         })
+                        .catch(function(){
+                            myApp.city = 'Not a valid zip code';
+                        })
                 }
 
             }
