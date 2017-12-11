@@ -28,7 +28,7 @@
         <div class="row">
             <form>
                 <label for="zip">Zip:</label>
-                <input type="text" id="zip" placeholder="Insert ZIP">
+                <input v-on:keyUp="parseZip" v-model="zip" type="text" id="zip" placeholder="Insert ZIP">
                 <span class="weak hidden">Loading...</span>
             </form>
         </div>
@@ -44,7 +44,13 @@
     new Vue({
         el: '#zip-loader',
         data: {
+            zip: '',
             city: 'Insert zip to display matching city'
+        },
+        methods:{
+            parseZip: function(){
+                console.log(this.zip);
+            }
         }
     });
 
