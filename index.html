@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Vue for rapid prototyping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+
+    <style>
+        .weak {
+            opacity: 0.5;
+            font-size: 0.8em;
+        }
+
+        .match {
+            opacity: 0.5;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <form>
+            <label for="zip">Zip:</label>
+            <input type="text" id="zip" placeholder="Insert ZIP">
+            <span class="weak hidden">Loading...</span>
+        </form>
+    </div>
+    <div class="row">
+        <label for="city">City</label>
+        <span>Matching City:</span> <span class="match">Insert zip to display matching city</span>
+    </div>
+
+</body>
+
+</html>
